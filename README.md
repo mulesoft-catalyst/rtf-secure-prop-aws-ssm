@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Managing and accessing sensitive information using MuleSoft application deployed to Runtime Fabric(RTF) can be handled using rtfctl utility. Secure properties are added in the Runtime Fabric cluster locally, are stored securely, and are scoped per environment. Secure properties are accessible in unencrypted form by Mule applications deployed in the scoped environment as custom properties. 
+Managing and accessing sensitive information using the MuleSoft application deployed to Runtime Fabric(RTF) can be handled using rtfctl utility. Secure properties are added in the Runtime Fabric cluster locally, are stored securely, and are scoped per environment. Secure properties are accessible in unencrypted form by Mule applications deployed in the scoped environment as custom properties. 
 Parameter Store is a capability of AWS Systems Manager which provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, and license codes as parameter values. You can store values as plain text or encrypted data. 
-If you are storing sensitive data in Parameter Store which needs to be accessed by MuleSoft application then you need to sync data from Parameter Store to RTF secure property. This utility allows you to sync data between Parameter Store and rtfctl secure property. 
+If you are storing sensitive data in the Parameter Store which needs to be accessed by MuleSoft application then you need to sync data from Parameter Store to RTF secure property. This utility allows you to sync data between Parameter Store and rtfctl secure property. 
 
 ## Prerequisite
 ### Packages 
@@ -23,7 +23,7 @@ install-packages script checks if the above packages are installed and installs 
 Note - install-packages.sh has been tested on RHEL 7. Make changes to the script based on your operating system.
 
 ### Permissions
-To access Parameter Store using AWS CLI you need to have right IAM role permsissions.
+To access Parameter Store using AWS CLI you need to have the right IAM role permissions.
 
 Go to AWS -> IAM and create a policy "ssm-param-store-account-policy" with below permissions - 
 ```
@@ -52,7 +52,7 @@ Go to AWS -> IAM and create a policy "ssm-param-store-account-policy" with below
     ]
 }
 ```
-Create role in IAM and call it "ssm-account-role". Add "ssm-param-store-account-policy" policy to the role.
+Create a role in IAM and call it "ssm-account-role". Add "ssm-param-store-account-policy" policy to the role.
 Edit the trust relationship of the role to add user 
 ```
 {
@@ -129,3 +129,4 @@ To run the script -
 $ chmod 755 delete-secure-props.sh
 $ ./delete-secure-props.sh <environment_id>
 ```
+
