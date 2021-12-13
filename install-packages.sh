@@ -32,20 +32,6 @@ fi
 
 echo "--------------------------------------------------------------------------------------------------"
 
-isGitInstalled=$(git version)
-
-if [ -z "$isGitInstalled" ]
-then
-        echo "Installing Git.."
-        sudo yum install git -y
-else
-
-        echo "Git is installed"
-        echo "Git version :: $(git version)"
-        echo "Git location :: $(which git)"
-fi
-
-echo "--------------------------------------------------------------------------------------------------"
 
 isJqInstalled=$(jq --version)
 
